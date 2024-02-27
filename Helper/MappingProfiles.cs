@@ -19,7 +19,10 @@ public class MappingProfiles : Profile
         //Creating Product
         CreateMap<Product, ProductDto>();
         CreateMap<ProductDto, Product>();
-        
+
+
+
+
     }
     
 }

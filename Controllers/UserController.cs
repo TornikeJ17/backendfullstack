@@ -165,7 +165,7 @@ public class UserController : Controller
                 var userDetailsDto = _mapper.Map<UserDetailsDto>(user);
                 return Ok(new
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    token = new JwtSecurityTokenHandler().WriteToken(token).ToString(),
                     expiration = token.ValidTo,
                     userDetails = userDetailsDto
                 });
@@ -211,11 +211,7 @@ public class UserController : Controller
     {
         try
         {
-            var userId = _userManager.Users.Where(u => u.Id != id).Select(u => u.Id).FirstOrDefault();
-            if (userId == id)
-            {
-                return BadRequest("Yoy cannot delete your own account.");
-            }
+          
             var userWithProducts = _userRepository.GetProductByUser(id);
             if (userWithProducts.Count > 0)
             {

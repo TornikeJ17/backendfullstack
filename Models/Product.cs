@@ -14,6 +14,6 @@ public class Product
     public ProductTags ProductTags { get; set; }
     public ProductCategory ProductCategory { get; set; }
     public bool inStock { get; set; }
-    public List<string> ImageUrls { get; set; }
-    public ICollection<ProductUser> ProductUsers { get; set; }
+    public List<string>? ImageUrls { get; set; }
+    public IEnumerable<ProductUser>? ProductUsers { get; set; }
 }

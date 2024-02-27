@@ -1,4 +1,5 @@
 using reactProjectFull.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace reactProjectFull.Dto;
 
@@ -14,5 +15,6 @@ public class ProductDto
     public ProductTags ProductTags { get; set; }
     public ProductCategory ProductCategory { get; set; }
     public bool inStock { get; set; }
-    public ICollection<string> ImageUrls { get; set; }
+    public ICollection<string>? ImageUrls { get; set; }
+    
 }
